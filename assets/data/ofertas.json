@@ -1,0 +1,40 @@
+[
+  {
+    "id": "ofr-001",
+    "negocioId": "neg-panaderia-san-jose",
+    "titulo": "Combo de pan del día — Panadería San José",
+    "descripcion": "8 panes variados que no se vendieron hoy, barrio La Nevada.",
+    "precio": { "original": 15000, "descuento": 8000 },
+    "estado": {
+      "tipo": "publicada",
+      "cantidadDisponible": 3,
+      "publicadaEn": "2026-08-15T23:30:00Z"
+    },
+    "fotos": ["https://ejemplo.co/f/pan1.jpg", "https://ejemplo.co/f/pan2.jpg"]
+  },
+  {
+    "id": "ofr-002",
+    "negocioId": "neg-carniceria-el-buen-corte",
+    "titulo": "Bandeja de cortes surtidos — Carnicería El Buen Corte",
+    "descripcion": "Carne de res y cerdo, barrio Simón Bolívar, apta para hoy y mañana.",
+    "precio": { "original": 45000, "descuento": 25000 },
+    "estado": {
+      "tipo": "reservada",
+      "reservadaPor": "usr-077",
+      "codigoRetiro": "R-3391",
+      "reservadaEn": "2026-08-15T23:45:00Z"
+    }
+  },
+  {
+    "id": "ofr-003",
+    "negocioId": "neg-asadero-la-parrilla",
+    "titulo": "Costillas ahumadas del día — Asadero La Parrilla",
+    "descripcion": "Preparadas en la tarde, barrio Centro.",
+    "precio": { "original": 60000, "descuento": 30000 },
+    "estado": {
+      "tipo": "cancelada",
+      "motivo": "Se dañó el congelador y no se pudo garantizar la cadena de frío."
+    },
+    "fotos": []
+  }
+]
