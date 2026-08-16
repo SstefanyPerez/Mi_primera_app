@@ -1,17 +1,29 @@
-# mi_primera_app
+# App de comida excedente — Valledupar
 
-A new Flutter project.
+Conecta negocios de comida (panaderías, carnicerías, asaderos) que les
+sobran productos al final del día con personas que quieren comprarlos a
+menor precio antes de que dejen de estar frescos.
 
-## Getting Started
+## El dominio
 
-This project is a starting point for a Flutter application.
+- `Oferta`         — entidad principal. Identidad: `id`.
+- `Precio`         — objeto de valor: precio original y precio con descuento.
+- `EstadoOferta`   — sellada: Publicada · Reservada · Recogida · Vencida · Cancelada.
 
-A few resources to get you started if this is your first Flutter project:
+Decisión: modelo escrito a mano en `Precio`, `EstadoOferta` y `Oferta`.
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+Se probó generar `Precio` y `Oferta` con freezed + json_serializable, pero la
+versión instalada (freezed 4.0.0-dev.3, un prerelease) produjo tres fallos de
+generación distintos: colisión de nombres con `fromJson` personalizado,
+pérdida de conversión de objetos anidados a `Map` sin `explicitToJson`, y un
+error de "Cannot populate the required constructor argument" al activarlo.
+Ante un toolchain inestable y el cierre de la entrega, se priorizó la versión
+manual: compila limpio, pasa las pruebas sin parches, y conserva el mensaje
+`CampoInvalido` que identifica exactamente qué campo del JSON falló — algo
+que la versión generada pierde.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Cómo correrlo
+
+    flutter pub get
+    flutter test
+    flutter run

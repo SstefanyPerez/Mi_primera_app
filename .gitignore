@@ -33,6 +33,11 @@ migrate_working_dir/
 /build/
 /coverage/
 
+# Código generado por freezed / json_serializable — se reconstruye con
+# `dart run build_runner build`, no se versiona.
+*.freezed.dart
+*.g.dart
+
 # Symbolication related
 app.*.symbols
 
